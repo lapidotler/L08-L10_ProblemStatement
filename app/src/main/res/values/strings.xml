@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Problem Statement</string>
+    <string name="tvTitle">Song Title</string>
+    <string name="etTitle">Enter song title here</string>
+    <string name="tvSinger">Singer</string>
+    <string name="etSinger">Enter singers name here</string>
+    <string name="tvYear">Year</string>
+    <string name="etYear">Enter year of release here</string>
+    <string name="tvStars">Stars</string>
+    <string name="btnInsert">Insert</string>
+    <string name="btnShowList">Show List</string>
+    <string name="sortByTitle">Sort by Title</string>
+    <string name="sortBySingers">Sort by Singers</string>
+    <string name="btnBack"><![CDATA[<< Return to Homepage]]></string>
+    <string name="sortBy5Stars">SHOW ALL SONGS WITH 5 STARS</string>
+    <string name="song_id">Song ID</string>
+    <string name="btnUpdate">Update</string>
+    <string name="btnDelete">Delete</string>
+    <string name="btnCancel">Cancel</string>
+</resources>
