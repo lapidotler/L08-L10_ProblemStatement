@@ -101,6 +101,9 @@ public class ThirdActivity extends AppCompatActivity {
                 db.updateSong(data);
                 db.close();
 
+                Toast.makeText(ThirdActivity.this, "Updated " + data.getTitle(),
+                        Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(ThirdActivity.this, SecondActivity.class);
                 startActivity(intent);
             }

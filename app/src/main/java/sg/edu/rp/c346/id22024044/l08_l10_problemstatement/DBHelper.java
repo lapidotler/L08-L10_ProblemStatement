@@ -79,11 +79,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
+                int id = cursor.getInt(0);
                 String title = cursor.getString(1);
                 String singers = cursor.getString(2);
                 int year = cursor.getInt(3);
                 int stars = cursor.getInt(4);
-                Song song = new Song(title, singers, year, stars);
+                Song song = new Song(id, title, singers, year, stars);
                 songs.add(song);
             } while (cursor.moveToNext());
         }
@@ -104,11 +105,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
+                int id = cursor.getInt(0);
                 String title = cursor.getString(1);
                 String singers = cursor.getString(2);
                 int year = cursor.getInt(3);
                 int stars = cursor.getInt(4);
-                Song song = new Song(title, singers, year, stars);
+                Song song = new Song(id, title, singers, year, stars);
                 songs.add(song);
             } while (cursor.moveToNext());
         }
@@ -129,11 +131,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
+                int id = cursor.getInt(0);
                 String title = cursor.getString(1);
                 String singers = cursor.getString(2);
                 int year = cursor.getInt(3);
                 int stars = cursor.getInt(4);
-                Song song = new Song(title, singers, year, stars);
+                Song song = new Song(id, title, singers, year, stars);
                 songs.add(song);
             } while (cursor.moveToNext());
         }
@@ -158,11 +161,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
+                int id = cursor.getInt(0);
                 String title = cursor.getString(1);
                 String singers = cursor.getString(2);
                 int year = cursor.getInt(3);
                 int stars = cursor.getInt(4);
-                Song song = new Song(title, singers, year, stars);
+                Song song = new Song(id, title, singers, year, stars);
                 songs.add(song);
             } while (cursor.moveToNext());
         }
@@ -170,6 +174,26 @@ public class DBHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return songs;
+    }
+
+    public ArrayList<String> getDistinctYears() {
+        ArrayList<String> years = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {COLUMN_YEAR};
+
+        Cursor cursor = db.query(true, TABLE_SONG, columns, null, null, null, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int year = cursor.getInt(0);
+                years.add(String.valueOf(year));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return years;
     }
 
     public int updateSong(Song data){

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundlist"
     android:orientation="vertical">
 
     <Button
@@ -34,6 +35,13 @@
             android:text="@string/sortBySingers" />
 
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinnerYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:paddingTop="20dp" />
 
     <ListView
         android:id="@+id/lvSongs"
